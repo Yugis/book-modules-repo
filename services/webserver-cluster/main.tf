@@ -1,13 +1,3 @@
-terraform {
-  backend "s3" {
-    bucket         = "terraform-up-and-running-state-66e15a2626bc6"
-    region         = "us-east-2"
-    dynamodb_table = "terraform-up-and-running-locks"
-    encrypt        = true
-    key            = "stage/services/webserver-cluster/terraform.tfstate"
-  }
-}
-
 resource "aws_launch_configuration" "example" {
   image_id        = "ami-085f9c64a9b75eed5"
   instance_type   = var.instance_type
